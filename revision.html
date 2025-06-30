@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Loop Revision</title>
+</head>
+<body>
+
+
+<script>
+
+
+// let str = "Hello World";
+// // string or array for of loop
+// let len = 0;
+// for(const s of str){
+//     console.log(s);
+//     len++;
+// }
+// console.log(len);
+
+
+// let arr = [1,2,3,4,5,6,7,8,9,10];
+// let t = 0;
+// let e = 0;
+// let o = 0;
+// for(let n of arr){
+    
+//     if(n % 2 == 0){
+//         // console.log(n);
+//         e+=n;
+//     }else{
+//         console.log(n);
+//         o+=n;
+//     }
+//     t+=n;
+// }
+// console.log("sum of all number ",t);
+// console.log("sum of even number ",e);
+// console.log("sum of odd number ",o);
+
+
+// let Car = {
+//     "car_name" : "Hyundai I 10",
+//     "car_modal" : "Nios",
+//     "car_number" : "GJ0AB12654",
+//     "model_year" : 2025,
+// }
+
+// console.log(Car.car_name);
+// console.log(Car.car_modal);
+// console.log(Car.car_number);
+// console.log(Car['model_year']);
+
+
+// for(let key in Car){
+//     console.log(key," : ",Car[key]);
+// }
+
+// let arr  = [1,2,3];
+
+// multi dimention associative array
+// for in loop provide key from array
+const Students = [
+    {name: "Chirag", marks : 85,roll_no : 501},
+    {name: "Devanshi" , marks : 95,roll_no : 502},
+    {name: "Jay" , marks : 65,roll_no : 503},
+    {name: "Mitesh" , marks : 55,roll_no : 504},
+    {name: "Bharat" , marks : 90,roll_no : 504},
+    {name: "Jignesh" , marks : 98,roll_no : 505},
+]
+// console.log(Students[0]['name']);
+// console.log(Students[0]['marks']);
+// console.log(Students[0]['roll_no']);
+let maxMarks = Students[0]['marks'];
+// console.log(maxMarks);
+for(let s in Students){
+    // console.log(Students[s]);
+    // console.log(s," : ",Students[s]);
+    for(let k in Students[s]){
+        // console.log(k);
+        // console.log(k , " : ", Students[s][k]);
+        // console.log(Students[s]['marks']);
+        if(Students[s]['marks'] > maxMarks){
+            maxMarks = Students[s]['marks'];
+        }
+       
+    }
+}
+
+console.log(maxMarks);
+
+</script>
+</body>
+</html>
