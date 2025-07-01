@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrow Function In Js</title>
+</head>
+<body>
+    
+  
+<script>
+
+let gross_salary = prompt("Enter Your Gross Salary : ");
+
+
+let basic_salary; // 50% of 
+let hra; //-> 5%
+let other;
+let pt;
+let esic;
+let pf;
+let it_declaration;
+let ctc;
+let netSalary;
+let YearlyNetsalary;
+
+function SalaryCal(gsalary){
+    basic_salary = gsalary * 0.5;
+    hra = basic_salary * 0.4;
+    other = basic_salary - hra;
+    pf = basic_salary * 9 / 100;
+    esic = gsalary * 0.75 / 100;
+    pt = 200;
+    it_declaration = (basic_salary + hra + other - pf - esic - pt) * 12 / 100;
+    ctc = gsalary * 12;
+    netSalary = basic_salary + hra + other - pf - esic - pt;
+    YearlyNetsalary = netSalary * 12;
+    
+    console.log(`**************Salary Calculation****************`);
+    console.log(`CTC = ${ctc}`);
+    console.log(`Gross Salary = ${gsalary}`);
+    console.log(`Basic Salary = ${basic_salary}`);
+    console.log(`It/Declaration = ${it_declaration}`);
+    console.log(`HRA = ${hra}`);
+    console.log(`Other = ${other}`);
+    console.log(`PF = ${pf}`);
+    console.log(`ESIC = ${esic}`);
+    console.log(`Professional Tax = ${pt}`);
+    console.log(`**************Net Salary****************`);
+    console.log(`Net Salary = ${netSalary}`);
+    console.log(`Yearly Net Salary = ${YearlyNetsalary}`);
+    console.log(`**************END****************`);
+}
+
+SalaryCal(gross_salary);
+
+</script> 
+</body>
+</html>
