@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array In Js</title>
+</head>
+<body>
+
+   
+<script>
+
+// this is index array
+
+// let arr =  [1,2,3,4,5,6,7,8,9,10];
+// console.log(arr);
+
+// for(let i = 0; i < arr.length;i++){
+    //     console.log(arr[i]);
+    // }
+    
+// let color =  ["Blue","Black","White","Orange","Yellow","Red"];
+// console.log(color);
+
+// for(let i = 0; i < color.length;i++){
+//     console.log(i + color[i]);
+// }
+
+// for of loop itrate for each elements of array
+// if condition dont matter than you can simply use for of loop 
+
+// for (const e of color) {
+//     console.log(e);
+// }
+
+// for in loop itrate for each elements of array and return of each elemen key
+// for (const k in color) {
+//     console.log(k  + " =>"  + color[k]);
+// }
+
+
+
+// assosiative array
+// In JavaScript, the concept of an "associative array" is implemented using objects. 
+// While other programming languages might have a distinct data type for associative arrays (often called maps, dictionaries, or hashes), 
+// JavaScript leverages its object structure to achieve the same functionality.
+// An associative array in JavaScript is essentially an object where properties (keys) are strings and their corresponding values can be of any data type. 
+// Instead of using numerical indices like a traditional array, you use user-defined string keys to store and retrieve data.
+
+let maxMarks;
+let data = [
+    {name : "mitesh",age:31,gender:"Male",education:"B.com",per : 85},
+    {name : "Jignesh",age:32,gender:"Male",education:"MBA",per : 95},
+    {name : "Bharat",age:35,gender:"Male",education:"BCA",per : 75},
+    {name : "Ankit",age:27,gender:"Male",education:"M.sc It",per : 98},
+];
+maxMarks = data[0].per;
+// console.log(maxMarks);
+// console.log(maxMarks);
+// console.log(data.name);
+for (const key in data) {
+//    console.log(data);
+for (const k in data[key]) {
+    // console.log(k);
+    console.log(k +  " : " + data[key][k]);
+    // console.log(data[key][k]);
+    if(data[key].per > maxMarks){
+        maxMarks = data[key].per;
+    }
+}
+console.log(" ");
+}
+console.log(maxMarks);
+</script>
+    
+</body>
+</html>
