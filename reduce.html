@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reduce Method in js</title>
+</head>
+<body>
+
+<script>
+// Reduce Method 
+// Parameter	Description
+// accumulator	Holds the running total/result
+// currentValue	Current item being processed in the array
+// initialValue	(Optional) The initial value of the accumulator
+// accumulator = 0 -> currentValue = 1 = accumulator = accumulator + currentValue; // 1
+// accumulator = 1 -> currentValue = 2 = accumulator = accumulator + currentValue; // 3
+// accumulator = 3 -> currentValue = 3 = accumulator = accumulator + currentValue; // 6
+let productRate = [998,785,526,321,299,188,487,699,898,180,112];
+
+let sum = productRate.reduce((acc,curr,idx,array)=>{
+    console.log(idx + " : " + array);
+    return acc += curr;
+});
+console.log(sum);
+let avg = sum / productRate.length;
+console.log(avg);
+
+
+let num = [1,2,3,4,5];
+
+let fact = num.reduce((a,c)=>{
+    return a * c;
+})
+console.log(fact);
+
+
+// function msg()
+// {
+//     console.log("Good Evening");
+// }
+// msg();
+
+// let msg = ()=> 25 + 50;
+// console.log(msg());
+</script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map Method in js</title>
+</head>
+<body>
+
+<script>
+// map method return new array insted of changes in existing array
+let arr = [9,7,5,3,2,1,4,6,8,10,12];
+
+let newArry = arr.map((e,idx,arr)=>{
+    // console.log(idx + " : " + e,arr);
+    return e * e;
+});
+
+let max = newArry[0];
+let min = newArry[0];
+console.log(newArry);
+newArry.forEach((ele)=>{
+    if(ele > max)
+    {
+        max = ele;
+    }
+    if(ele < min){
+        min = ele;
+    }
+});
+
+console.log(max);
+console.log(min);
+
+</script>
+</body>
+</html>
