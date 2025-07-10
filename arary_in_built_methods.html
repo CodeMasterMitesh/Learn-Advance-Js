@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array In Built Method</title>
+</head>
+<body>
+  
+ <script>
+
+    let city = ["Bhavnagar","Junagadh","Rajkot"];
+    let city1 = ["Mehsana","Patan","Palanpur","Somnath"];
+    let city2 = ["Ahmedabad","Surat","Baroda"];
+    // console.log(city.concat(city1));
+
+    let allCity = city.concat(city1); // contact method return new merged array
+    console.dir(allCity);
+
+    // console.log(allCity.toString());
+
+    let cityNames = allCity.toString(); // toString method convert array to string
+    console.log(cityNames);
+
+    let joinedCity  = allCity.join("_and_");
+    console.log(joinedCity);
+    // console.log(allCity.join("_and_"));
+
+    let sliceCity = allCity.slice(1,4); 
+    console.log(sliceCity)
+    // console.log(allCity.slice(0,4)); // slice method take 2 argument stating index number and ending number and return as new array
+
+    let spliceCity = allCity.splice(0,2,"Gir","Deu","Somnath");
+    console.log(spliceCity);
+    // console.log(allCity.splice(0,2,"Gir","Deu","Somnath")); // splice method take 3 argument 3rd is optional 1 argument is starting index number and second argument deletCount and 3rd argument for replace elements againts 
+    console.dir(allCity);
+
+
+    // console.log(allCity.indexOf("Somnath")); // indexof method return index number of serached element and if element not found in array than return -1
+    console.log(allCity.lastIndexOf("Gir",6)); // lastIndexOf method return index number of serached element from last and if element not found in array than return -1
+    console.log(allCity.includes("Gir")); // includes method return true / false if elements found in array
+ </script>   
+</body>
+</html>
