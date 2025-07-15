@@ -39,6 +39,56 @@
     // console.log(allCity.indexOf("Somnath")); // indexof method return index number of serached element and if element not found in array than return -1
     console.log(allCity.lastIndexOf("Gir",6)); // lastIndexOf method return index number of serached element from last and if element not found in array than return -1
     console.log(allCity.includes("Gir")); // includes method return true / false if elements found in array
+
+
+    let numArray = [1,5,50,10,65,75,98];
+
+    // let findMax = numArray.find((e)=>{
+    //     // console.log(e);
+    //     return e > 50;
+    // });
+
+    // console.log(findMax);
+
+    // console.log(numArray.find(e => e > 10));  // if condition is simple and single than u can use arrow function withoght bracket and curly bracket
+    
+    // console.log(numArray.every(e => e > 0));
+
+    //  let a = numArray.every((e,idx,arr)=>{
+    //     console.log(e,idx,arr);
+    // });
+
+    // console.log(numArray.some(e => e > 100));
+
+    // numArray.sort();
+    numArray.sort((a,b)=>{
+        // console.log(a,b);
+        return a - b;
+    }); // ascending
+    console.log(numArray);
+
+// Step-by-step comparisons:
+// Compare 5 and 1:
+// 5 - 1 = 4 → 1 comes before 5
+
+// Compare 50 and 5:
+// 50 - 5 = 45 → 5 comes before 50
+
+// Compare 10 and 50:
+// 10 - 50 = -40 → 10 comes before 50
+
+// Compare 10 and 5:
+// 10 - 5 = 5 → 5 comes before 10
+
+// Compare 65 and 50:
+// 65 - 50 = 15 → 50 comes before 65
+
+// Compare 75 and 65:
+// 75 - 65 = 10 → 65 comes before 75
+
+// Compare 98 and 75:
+// 98 - 75 = 23 → 75 comes before 98
+
  </script>   
 </body>
 </html>
