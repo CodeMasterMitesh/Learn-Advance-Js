@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Methods In Js</title>
+</head>
+<body>
+
+<script>
+    let str = "Hello Ahmedabad How Are You?";
+    console.log("length of str is " + str.length);
+    console.dir(str.charAt(-1));
+    console.dir(str.charCodeAt(0));
+    console.log(str.at(-1));
+    console.log(str.indexOf("Hello")); // searching in string
+    console.log(str.lastIndexOf("Hello")); // searching in string from last
+    console.log(str.includes("hello")); // searching in string and true/false
+    console.log(str.startsWith("h")); // searching in string from start and match char or string than return true else false
+    console.log(str.endsWith("?")); // searching in string from last and match char or string than return true else false
+    console.log(str.toUpperCase());
+    console.log(str.toLowerCase());
+
+    // let newStr = str.slice(0,5);
+    // console.log(newStr);
+    let city = "Ahmedabad";
+    if(str.includes(city)){
+        let n = str.indexOf(city);
+        console.log(n);
+        let l = city.length + n;
+        console.log(l);
+        let cityName = str.slice(n,l);
+        console.log(cityName);
+    }
+    // let value = prompt("Enter Any Key : ");
+    // console.log(value.charCodeAt(0));
+    // if(value.charCodeAt(0) == 65 || value.charCodeAt(0) == 97){
+    //     console.log("You Enter A");
+    //     window.location.href = "loops_1.html";
+    // }
+</script>
+</body>
+</html>

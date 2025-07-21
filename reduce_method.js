@@ -24,23 +24,25 @@
 let product_rate = [750,150,650,850,950,450,780,950];
 
 
-// let total = product_rate.reduce((acc,curr)=>{
-//     return acc + curr;
-// });
+let total = product_rate.reduce((acc,curr)=>{
+    // console.log(acc);
+    // console.log(curr);
+    return acc + curr; // 750 + 150
+});
 
-function sum (t,c){
-    return t + c;
-}
+// function sum (t,c){
+//     return t + c;
+// }
 
-let total = product_rate.reduce(sum,0);
+// let total = product_rate.reduce(sum,0);
 console.log(total);
 
-let lengthOfArr = product_rate.length;
-console.log(lengthOfArr);
+// let lengthOfArr = product_rate.length;
+// console.log(lengthOfArr);
 
-let avg = total / lengthOfArr;
+// let avg = total / lengthOfArr;
 
-console.log(avg);
+// console.log(avg);
 
 // foreach 
 // map 
