@@ -6,9 +6,9 @@
     <title>String Methods In Js</title>
 </head>
 <body>
-
+<h1>String Methos in Js</h1>
 <script>
-    let str = "Hello Ahmedabad How Are You?";
+    let str = "Hello Ahmedabad Ahmedabad Ahmedabad How Are You?";
     console.log("length of str is " + str.length);
     console.dir(str.charAt(-1));
     console.dir(str.charCodeAt(0));
@@ -38,6 +38,36 @@
     //     console.log("You Enter A");
     //     window.location.href = "loops_1.html";
     // }
+    let text = str.substring(5,18);
+    console.log(text);
+    console.log(text.trimStart());
+    let newText = " JavaScript ";
+    console.log(newText);
+    console.log(newText.trim());
+
+    str = str.replace("Ahmedabad","Students");
+    console.log(str);
+
+    str = str.replaceAll("Ahmedabad",",Students,");
+    console.log(str);
+
+    let n = "ASPEN/SO/25-26/";
+    let len = n.length;
+    let num = 1;
+    console.log(n.padStart(12,"h-"));
+    let ser = n.padEnd(len+1,num+1);
+    console.log(ser);
+    console.log(ser.repeat(2));
+
+    console.log(str.concat("=>",ser.concat()));
+    let arr = str.split(",");
+    console.log(arr);
+    // console.log(arr.reverse().join(","));
+    let string = [];
+    for (let i = arr.length; i >= 0; i--) {
+            string.push(arr[i]);
+    }
+    console.log(string.toString());
 </script>
 </body>
 </html>
