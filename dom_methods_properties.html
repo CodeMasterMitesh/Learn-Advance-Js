@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Methods and Propeties</title>
+    <style>
+        .box{
+            border: 2px solid black;
+            height: 200px;
+            width: 200px;
+            background-color: royalblue;
+        }
+        .para1{
+            visibility: hidden;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 id="heading"> <span>Window</span>  Global Object</h1>
+    <h2>BOM => Browser Object Model</h2>
+    <h2>DOM => Document Object Module</h2>
+    <p class="para"> <span> Hello </span> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste consectetur corrupti consequatur suscipit doloribus repudiandae ipsum odio quibusdam blanditiis maiores ab laborum facere, cupiditate maxime minima mollitia omnis illo amet?</p>
+    <p class="para">Lorem i class="para"sum dolor, sit amet consectetur adipisicing elit. Iste consectetur corrupti consequatur suscipit doloribus repudiandae ipsum odio quibusdam blanditiis maiores ab laborum facere, cupiditate maxime minima mollitia omnis illo amet?</p>
+    <p class="para">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste consectetur corrupti consequatur suscipit doloribus repudiandae ipsum odio quibusdam blanditiis maiores ab laborum facere, cupiditate maxime minima mollitia omnis illo amet?</p>
+    <p class="para">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste consectetur corrupti consequatur suscipit doloribus repudiandae ipsum odio quibusdam blanditiis maiores ab laborum facere, cupiditate maxime minima mollitia omnis illo amet?</p>
+    <p class="para">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste consectetur corrupti consequatur suscipit doloribus repudiandae ipsum odio quibusdam blanditiis maiores ab laborum facere, cupiditate maxime minima mollitia omnis illo amet?</p>
+    <p class="para">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste consectetur corrupti consequatur suscipit doloribus repudiandae ipsum odio quibusdam blanditiis maiores ab laborum facere, cupiditate maxime minima mollitia omnis illo amet?</p>
+    <p class="para1">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste consectetur corrupti consequatur suscipit doloribus repudiandae ipsum odio quibusdam blanditiis maiores ab laborum facere, cupiditate maxime minima mollitia omnis illo amet?</p>
+
+    <span class="data"></span>
+
+<script>
+    
+    let att = document.querySelector("#heading").setAttribute("class","box"); // get attribute
+    // docume
+    // console.dir(att1);
+
+    // setValue / getValue 
+
+    // innerHtml -> html tag-> new html tag add karvo 
+    // innerText -> html tag-> new text add karvu
+    // TextContent -> non visible tag ne target 
+
+    let para = document.querySelectorAll(".para");
+    console.dir(para);
+
+    for (let i = 0; i < para.length; i++) {
+        console.log(para[i].innerHTML = "<a href='https://www.google.com'> Google</a>");
+    }
+
+    //  for (let i = 0; i < para.length; i++) {
+    //     console.log(para[i].innerText = "Good Morning");
+    // }
+    
+    // console.dir(para[0].innerText); // get text from node of html
+    // console.dir(para[0].innerHTML); // get text with tag from node of html
+
+    // let para1 = document.querySelectorAll(".para1");
+    // console.dir(para1);
+
+    // para1.textContent = "This id Invisible Para"; // set value of invisible p tag
+    // let newText = para1.textContent // get value of invisible p tag
+    // console.log(newText);
+
+    // let span = document.querySelector(".data").textContent = newText;
+    // console.log(span);
+
+    // createElement
+    // append 
+    // prepand 
+    // after 
+    // before
+
+</script>
+    
+</body>
+</html>
