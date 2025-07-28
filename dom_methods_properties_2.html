@@ -5,22 +5,80 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DOM Methods and Propeties</title>
     <style>
-        .box{
+        .box1{
             border: 2px solid black;
             height: 200px;
             width: 200px;
             background-color: royalblue;
         }
-        .para1{
+        .box2{
+            background-color: yellow;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .box{
             visibility: hidden;
         }
     </style>
 </head>
 <body>
+<h1 id="heading"> <span><a href="#">JavaScript</a></span>Propetries</h1>
+<div class="box">Some Text</div>
+<p class="para"> <span>Hello</span> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Soluta ex error sequi amet. Nesciunt ut repellendus perspiciatis odit, optio est?</p>
+<p class="para"> <span>Hello</span> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Soluta ex error sequi amet. Nesciunt ut repellendus perspiciatis odit, optio est?</p>
+<p class="para"> <span>Hello</span> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Soluta ex error sequi amet. Nesciunt ut repellendus perspiciatis odit, optio est?</p>
+<p class="para"> <span>Hello</span> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Soluta ex error sequi amet. Nesciunt ut repellendus perspiciatis odit, optio est?</p>
+<p class="para"> <span>Hello</span> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Soluta ex error sequi amet. Nesciunt ut repellendus perspiciatis odit, optio est?</p>
+<!--
+     properties 
+     set/get :
 
-    
+     innerHTML
+     innerText
+     textContent
+
+  -->
 
 <script>
+
+    let heading = document.querySelector("#heading");
+    console.log(heading.innerHTML); // get innerHTML from node
+    console.dir(heading.innerHTML = "<span><a href='https://php.net'>PHP</a></span>"); // set innerHTML into node
+
+    // heading.style.backgroundColor = "yellow";
+    // heading.style.border = "2px solid black";
+    // heading.style.textAlign = "center";
+
+    heading.style.cssText = "background-color:orange;border:2px solid black;width:200px;text-align:center";
+    console.log(heading.childNodes);
+    console.log(heading.children[0].children[0].style.cssText = "color:black;");
+
+    
+    // let para = document.querySelectorAll(".para");
+    // console.log(para[0].innerHTML);
+
+    let para = document.querySelectorAll(".para");
+    // console.log(para[0].innerText); // get innerText
+    for (let i = 0; i < para.length; i++) {
+       console.log(para[i].innerText = "JavaScript Is Cool");  // set innerText
+       para[i].style.border = "2px solid black";
+    }
+
+    let box = document.querySelector(".box");
+    console.log("Box Content " + box.textContent);
+    
+    // getAttribute
+    console.log(heading.getAttribute("id"));
+    // setAttribute
+
+    // classList
+     for (let i = 0; i < para.length; i++) {
+    //    console.log(para[i].getAttribute("class"));
+    //    console.log(para[i].setAttribute("class","box1"));
+       console.log(para[i].classList.add("box1","box2"));
+       para[i].classList.remove("box1","box2");
+    }
 
     // createElement
     // append 
