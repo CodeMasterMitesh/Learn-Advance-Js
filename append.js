@@ -1,0 +1,49 @@
+let page = `
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Methods and Propeties</title>
+</head>
+<body>
+
+<h1>DOM Methods and Properties</h1>
+
+<div class="container">
+    This is Container
+</div>
+
+<!-- 
+// createElement
+// append  // ending in node but inside node 
+// prepand // starting in node but inside node 
+// after // outside but ending node
+// before // // outside but start node
+-->
+<script>
+    let div = document.createElement("div"); // create new element / node
+    div.innerText = "Some Text";
+    console.log(div);
+
+    let node = document.querySelector(".container");
+    console.log(node);
+    
+    // node.append(div);
+    node.prepend(div);
+    let cont = document.querySelector(".container");
+    // console.log(cont);
+    // cont.after(div);
+    // cont.before(div);
+
+    //div.remove(); // remove method for remove any element
+
+    let anc = document.createElement("a");
+    anc.innerText = "Google";
+    anc.setAttribute("href","https://www.google.com");
+
+    document.querySelector("body").prepend(anc);
+</script>
+</body>
+</html>`;
+document.childNodes[1].innerHTML = page;
