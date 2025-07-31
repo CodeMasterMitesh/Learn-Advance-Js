@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events In JavaScript</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .box{
+            border: 2px solid black;
+            width: 300px;
+            height: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #btn{
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: black;
+            color: white;
+            outline: none;
+            border: none;
+            position: absolute;
+            top: 25px;
+            right: 25px;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>DOM Events</h1>
+    <!-- inline JavaScript Method -->
+
+    <!-- <div class="box" onmouseleave="document.querySelector('.box').style.backgroundColor = 'purple';" onmouseover="document.querySelector('.box').style.backgroundColor = 'yellow';" ondblclick="document.querySelector('.box').style.backgroundColor = 'green';document.querySelector('.box').innerText = 'This Is Box';">
+        some text
+    </div>
+    <button style="width: 100px;background-color: yellow;padding: 5px;" onclick="console.log('clicked');console.log(document.querySelector('.box').style.backgroundColor = 'blue');">Click Me</button> -->
+    <!-- 
+    3 types of events 
+    mouse events
+
+    onclick 
+    ondblclick
+    onmouseover
+
+    keyboard events
+
+    onkeydown
+    onkeyup
+    onchange
+
+    other events
+    scroll
+
+    two way to handle events in js
+    1) inline method
+    2) external method
+    -->
+
+<div class="box" ondblclick="myfun();">
+    Some Text
+</div>
+<button onclick="myFunc();">Click Me</button>
+
+<button id="btn" onclick="bgChange();">Dark Mode</button>
+<script>
+
+function myFunc()
+{
+    let box = document.querySelector(".box");
+    box.style.cssText = "background-color : tomato;border-radius:12px;";
+    box.innerHTML = "<img src='js.png' width='200px' alt='js image'>";
+    // console.log("clicked");
+}
+
+function myfun()
+{
+    let box = document.querySelector(".box");
+    box.style.cssText = "border-radius:50%;";
+    box.innerHTML = "<img src='js.png' width='200px' alt='js image'>";
+}
+let mode = true;
+let btn = document.getElementById("btn");
+function bgChange()
+{
+   let bg = document.body;
+   if(mode){
+       bg.style.backgroundColor = "black";
+       btn.style.color = "black";
+       btn.style.backgroundColor = "white";
+       btn.innerText = "White Mode";
+       mode = false;
+   }else{
+       bg.style.backgroundColor = "white";
+       btn.style.color = "white";
+       btn.style.backgroundColor = "black";
+       btn.innerText = "Black Mode";
+       mode = true;
+   }
+}
+
+</script>
+</body>
+</html>
