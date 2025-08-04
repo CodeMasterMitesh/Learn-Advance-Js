@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events In JavaScript</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .box{
+            border: 2px solid black;
+            width: 300px;
+            height: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #btn{
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: black;
+            color: white;
+            outline: none;
+            border: none;
+            position: absolute;
+            top: 25px;
+            right: 25px;
+        }
+        .box{
+            height: 300px;
+            width: 300px;
+            border: 2px solid black;
+        }
+        .cursur{
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 2px solid black;
+            transition: all 1s ease-in-out;
+            pointer-events: none;
+            
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>DOM Events</h1>
+    <label for=""></label>
+    <select name="cityName" id="">
+        <option value="Ahmedabad">Ahmedabad</option>
+        <option value="Ahmedabad">Rajkot</option>
+        <option value="Ahmedabad">Baroda</option>
+        <option value="Ahmedabad">Jamnagar</option>
+    </select>
+    <div class="cursur"></div>
+    <div class="box">
+        some text
+    </div>
+    <!-- 
+    inline JavaScript Method 
+    3 types of events 
+    mouse events
+
+    onclick 
+    ondblclick
+    onmouseover
+
+    keyboard events
+
+    onkeydown
+    onkeyup
+    onchange
+
+    form events
+    submit
+-->
+    <!-- <button onclick="window.print()">Print</button> -->
+    <!-- <button onclick="myFunc();">Click Me</button> -->
+    <button  id="btn">Dark Mode</button>
+<script>
+    // function myFunc(){
+    //     document.querySelector("body").style.backgroundColor = "tomato";
+    // }
+    // let btn = document.getElementById("btn");
+
+    // let mode = true;
+    // btn.addEventListener("click",(e)=>{
+    //     console.log(e.clientX);
+    //     console.log(e.clientY);
+    //     console.log(e.target);
+    //     console.log(e.type);
+    //     console.log(e);
+    //     if(mode){
+    //         // console.log("click");
+    //         document.querySelector("body").style.backgroundColor = "black";
+    //         btn.style.backgroundColor = "white";
+    //         btn.style.color = "black";
+    //         btn.innerText = "White Mode";
+    //         mode = false;
+    //     }else{
+    //         document.querySelector("body").style.backgroundColor = "white";
+    //         btn.style.backgroundColor = "black";
+    //         btn.style.color = "white";
+    //         btn.innerText = "Dark Mode";
+    //         mode = true;
+    //     }
+    // });
+    let cur = document.querySelector(".cursur");
+    let body = document.querySelector("body");
+    document.addEventListener("mousemove",(e)=>{
+        console.log(window.innerWidth);
+        console.log(window.innerHeight);
+        // console.log(e.pageX);
+        // console.log(e.pageY);
+        // console.log(e.clientX);
+        // console.log(e.clientY);
+        let perclientX = (e.clientX * window.innerWidth) / 100 ;
+        console.log(perclientX);
+        let perclientY = (e.clientY * window.innerHeight) / 100 ;
+        console.log(perclientY);
+        // console.log(e.target);
+        body.style.backgroundColor = `hsl(${e.clientX} ${perclientX} ${perclientY})`;
+        cur.style.transform = `translate(${e.clientX}px,${e.clientY}px)`;
+    });
+
+
+</script>
+</body>
+</html>
