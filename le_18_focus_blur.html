@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events In JavaScript</title>
+    <style>
+        #errors{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Events In Js</h1>
+    <form action="">
+        <label for="">Name</label>
+        <input type="text" name="name" id="name" value="">
+        <br>
+        <label for="">Email</label>
+        <input type="text" name="email" id="email" value="">
+        <br>
+        <label for="">CityName</label>
+        <select name="cityname" id="cityname">
+            <option value="ahmedabad">Ahmedabad</option>
+            <option value="rajkot">Rajkot</option>
+            <option value="baroda">Baroda</option>
+        </select>
+        <br>
+        <input type="submit" value="submit"> 
+    </form>
+    <div id="errors"></div>
+    <div id="data"></div>
+<script>
+
+let name = document.querySelector("#name");
+let email = document.querySelector("#email");
+let cityname = document.querySelector("#cityname");
+let data = document.querySelector("#data");
+let errors = document.querySelector("#errors");
+name.addEventListener("blur",()=>{
+    console.log("hi");
+    let nameValue = document.querySelector("#name").value;
+    if(nameValue == ""){
+        errors.innerText = "Kindly Fill Name";
+    }else{
+        errors.innerText = "";
+    }
+});
+
+name.addEventListener("focus",()=>{
+    
+    console.log("hi 1");
+});
+
+cityname.addEventListener("change",()=>{
+    let nameValue = document.querySelector("#name").value;
+    let emailValue = document.querySelector("#email").value;
+    let cityValue = document.querySelector("#cityname").value;
+   if(nameValue == "" || emailValue == ""){
+        name.focus();
+        email.focus();
+        errors.innerText = "Enter Your Name and Email";
+   }else{
+        data.innerText = `Your Name is ${nameValue}. and Your Email Id is ${emailValue}. and Your City Name is ${cityValue}.`
+   }
+});
+
+</script>
+</body>
+</html>

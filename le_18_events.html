@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events In JavaScript</title>
+</head>
+<body>
+
+    <h1>Events In Js</h1>
+    <!-- <button id="btn" onclick="console.log('clicked 1');">Click Me</button> -->
+    <button id="btn">Click Me</button>
+
+<script>
+    // In JavaScript, addEventListener() is a built-in method used to attach an event handler function to a specified element in the Document Object Model (DOM). This method allows for dynamic and flexible event handling, enabling a function to be executed when a particular event occurs on the element.
+    
+    let btn = document.getElementById("btn");
+    // btn.onclick = ()=>{
+    //     document.body.style.backgroundColor = "royalblue";
+    // }
+    let bgcolor = (e)=>{
+        console.log(e.clientX);
+        console.log(e.clientY);
+        console.log(e.target);
+        console.log(e.type);
+        console.log(e);
+        document.body.style.backgroundColor = "royalblue";
+    }
+
+    document.addEventListener("click",bgcolor);
+
+    // btn.addEventListener("click",()=>{
+    //     console.log("Clicked");
+    // });
+
+</script>
+</body>
+</html>
