@@ -1,0 +1,162 @@
+<html>
+<head>
+    <title>Reg Form</title>
+    <style type="text/css">
+        body {
+            font-family: Calibri;
+        }
+
+        input[type="text"] {
+            width: 250px;
+        }
+
+        input[type="submit"],
+        input[type="reset"] {
+            width: 77px;
+            height: 27px;
+            position: relative;
+            left: 180px;
+        }
+
+        form {
+            text-align: center;
+            font-family: Calibri;
+            font-size: 20px;
+            border: 3px solid black;
+            width: 600px;
+            margin: 20px auto;
+        }
+
+        td {
+            padding: 10px;
+        }
+
+        td:first-child {
+            text-align: right;
+            font-weight: bold;
+        }
+
+        td:last-child {
+            text-align: left;
+        }
+        #errors{
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        <h1>Form Validation using HTML,CSS,JavaScript</h1>
+    </center>
+    <hr>
+    <form method="GET" id="reg_form">
+        <h2>Registration Form</h2>
+        <table>
+            <tr>
+                <td><label>First Name: </label></td>
+                <td>
+                    <input type="text" class="fname"  value="" name="fname" placeholder="First Name">
+                </td>
+            </tr>
+            <tr>
+                <td><label>Last Name: </label></td>
+                <td>
+                    <input type="text" class="lname" name="lname" placeholder="Last Name">
+                </td>
+            </tr>
+            <tr>
+                <td><label>Address: </label></td>
+                <td>
+                    <input type="textarea" class="address" size="50" name="address" placeholder="Address">
+                </td>
+            </tr>
+            <tr>
+                <td><label>Gender: </label></td>
+                <td>
+                    <input type="radio" class="gender" name="gender" value="male" checked>Male
+                    <input type="radio" class="gender" name="gender" value="femele">Female
+                </td>
+            </tr>
+            <tr>
+                <td><label>Email Id: </label></td>
+                <td>
+                    <input type="mail" class="email" name="email" placeholder="example@gmail.com">
+                </td>
+            </tr>
+            <tr>
+                <td><label>Mobile: </label></td>
+                <td>
+                    <input type="text" value="" class="mobile" name="mobile">
+                </td>
+            </tr>
+            <tr>
+                <td><label>Course: </label></td>
+                <td>
+                    <select name="course" class="course">
+                        <option value="select course">select course</option>
+                        <option value="HTML">HTML</option>
+                        <option value="CSS">CSS</option>
+                        <option value="JavaScript">JAVASCRIPT</option>
+                        <option value="Java">JAVA</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button type="submit" class="btn btn-primary w-100">Register</button>
+                    <input type="reset" name="reset" value="Reset">
+                </td>
+            </tr>
+        </table>
+        <div id="errors"></div>
+    </form>
+    
+
+<script>
+    let regform = document.getElementById("reg_form");
+    let errors = document.getElementById("errors");
+    regform.addEventListener("submit",(e)=>{
+        e.preventDefault();
+        let fname = document.querySelector(".fname").value;
+        let lname = document.querySelector(".lname").value;
+        let address = document.querySelector(".address").value;
+        let email = document.querySelector(".email").value;
+        let mobilev = document.querySelector(".mobile").value;
+        let course = document.querySelector(".course").value;
+        
+        console.log(fname);
+        console.log(mobilev);
+        console.log(typeof(mobilev));
+        if(fname == "")
+        {
+          errors.innerText = "First Name Is Missing";
+
+        }else if(lname == ""){
+
+            errors.innerText = "Last Name Is Missing";
+
+        }else if(address == ""){
+
+            errors.innerText = "Address Is Missing";
+
+        }else if(email == "" || (!email.includes("@")) || (!email.includes(".com"))){
+            errors.innerText = "Enter Your Email Address Or Enter Valid Email";
+
+        }else if(mobilev == "" || mobilev.length > 13){
+
+            errors.innerText = "Enter Your Mobile Number or Mobile Number Shoud be max 13 Digit";
+
+        }else if(course == "select course"){
+
+            errors.innerText = "Kindly Select Any One Course.";
+        }else{
+            errors.innerText = "";
+            regform.submit();
+        }
+
+    });
+</script>
+</body>
+
+</html>

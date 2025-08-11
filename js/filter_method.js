@@ -21,7 +21,7 @@ let num = [1,2,3,4,5,6];
 // console.log(evenNumber);
 // this is associative array
 const Students = [
-    {name: "Chirag", marks : 85,roll_no : 501},
+    {"name": "Chirag", "marks" : 85,"roll_no" : 501},
     {name: "Devanshi" , marks : 78,roll_no : 502},
     {name: "Jay" , marks : 65,roll_no : 503},
     {name: "Mitesh" , marks : 55,roll_no : 504},
