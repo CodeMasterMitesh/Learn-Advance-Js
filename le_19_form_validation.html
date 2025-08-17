@@ -50,9 +50,21 @@
         <h1>Form Validation using HTML,CSS,JavaScript</h1>
     </center>
     <hr>
-    <form method="GET" id="reg_form">
+    <form method="POST" id="reg_form">
         <h2>Registration Form</h2>
         <table>
+            <tr>
+                <td><label>User Name: </label></td>
+                <td>
+                    <input type="text" class="username"  value="" name="uname" placeholder="User Name">
+                </td>
+            </tr>
+            <tr>
+                <td><label>Password: </label></td>
+                <td>
+                    <input type="password" class="password"  value="" name="password">
+                </td>
+            </tr>
             <tr>
                 <td><label>First Name: </label></td>
                 <td>
@@ -112,10 +124,18 @@
         <div id="errors"></div>
     </form>
     
-
+    <div id="data"></div>
+    <button onclick="getMydata();">Get Your Data</button>
 <script>
+    let datadiv = document.getElementById("data");
+    function getMydata(){
+        let uname = window.localStorage.getItem("username");
+        let pass = window.localStorage.getItem("password");
+        datadiv.innerText = `Your User Name is ${uname} and Your Password is ${pass}.`;
+    }
     let regform = document.getElementById("reg_form");
-    let errors = document.getElementById("errors");
+    let errdiv = document.getElementById("errors");
+    let errors = [];
     regform.addEventListener("submit",(e)=>{
         e.preventDefault();
         let fname = document.querySelector(".fname").value;
@@ -124,37 +144,56 @@
         let email = document.querySelector(".email").value;
         let mobilev = document.querySelector(".mobile").value;
         let course = document.querySelector(".course").value;
+        let username= document.querySelector(".username").value;
+        let password= document.querySelector(".password").value;
         
-        console.log(fname);
-        console.log(mobilev);
-        console.log(typeof(mobilev));
+        // console.log(fname);
+        // console.log(mobilev);
+        // console.log(typeof(mobilev));
         if(fname == "")
         {
-          errors.innerText = "First Name Is Missing";
-
-        }else if(lname == ""){
-
-            errors.innerText = "Last Name Is Missing";
-
-        }else if(address == ""){
-
-            errors.innerText = "Address Is Missing";
-
-        }else if(email == "" || (!email.includes("@")) || (!email.includes(".com"))){
-            errors.innerText = "Enter Your Email Address Or Enter Valid Email";
-
-        }else if(mobilev == "" || mobilev.length > 13){
-
-            errors.innerText = "Enter Your Mobile Number or Mobile Number Shoud be max 13 Digit";
-
-        }else if(course == "select course"){
-
-            errors.innerText = "Kindly Select Any One Course.";
+          errors.push("First Name Is Missing");
         }else{
-            errors.innerText = "";
-            regform.submit();
+            errors = [];
         }
 
+        if(lname == ""){
+            errors.push("Last Name Is Missing");
+        }else{
+            errors = [];
+        }
+
+        if(address == ""){
+            errors.push("Address Is Missing");
+        }else{
+             errors = [];
+        }
+        if(email == "" || (!email.includes("@")) || (!email.includes(".com"))){
+            errors.push("Enter Your Email Address Or Enter Valid Email");
+        }else{
+             errors = [];
+        }
+        
+        if(mobilev == "" || mobilev.length > 13){
+            errors.push("Enter Your Mobile Number or Mobile Number Shoud be max 13 Digit");
+        }else{
+             errors = [];
+        }
+
+        if(course == "select course"){
+            errors.push("Kindly Select Any One Course.");
+        }
+        
+        else{
+            errors = [];
+            window.localStorage.setItem("username",username);
+            window.localStorage.setItem("password",password);
+            // regform.submit();
+            window.location.href = "le_20_login.html";
+        }
+        let err = errors.join(" - ");
+        errdiv.innerText = err;
+        // alert(err);
     });
 </script>
 </body>
