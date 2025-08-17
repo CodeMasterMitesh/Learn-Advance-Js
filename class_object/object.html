@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object In Jacascript</title>
+</head>
+<body>
+    
+
+  <h1>Object in Js and Prototype In js</h1>  
+
+<script>
+
+const students = {
+    // name : "Suraj",
+    // lastName : "Chauhan",
+
+    // printData : function (){
+    //     console.log(`my name is  ${this.name} lastname is ${this.lastName}.`); // students.name , students.lastName
+    // }
+     printData(name,lastName){
+        this.name = name;
+        this.lastName = lastName;
+        console.log(`my name is  ${this.name} lastname is ${this.lastName}.`); 
+     }
+}
+
+
+const krunal = {
+    name : "",
+    lastName : "",
+
+     printData(name,middlename,lastName,per){
+        this.name = name;
+        this.middlename = middlename;
+        this.lastName = lastName;
+        this.per = per
+        console.log(`my name is  ${this.name} ane middle name is ${this.middlename} and lastname is ${this.lastName}.`); 
+        console.log(`My Percentage is ${this.per}.`); 
+     }
+}
+
+
+const chirag = {
+    name : "",
+    lastName : "",
+}
+
+const chagan = {
+    name : "",
+    lastName : "",
+}
+krunal.__proto__ = students;
+chirag.__proto__ = students;
+chagan.__proto__ = students;
+
+// console.log(students.name);
+// console.log(students.lastName);
+// console.log(students.printData("mitesh","prajapati"));
+console.log(krunal.printData("Krunal","Dineshbhai","Patel",88));
+console.log(chirag.printData("chirag","Chauhan"));
+console.log(chagan.printData("chagan","Thakor"));
+</script>
+</body>
+</html>

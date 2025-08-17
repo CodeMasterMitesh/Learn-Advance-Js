@@ -1,0 +1,22 @@
+In JavaScript, a prototype is an object that serves as a template from which other objects inherit properties and methods. 
+Every object in JavaScript has a prototype, which is another object that it implicitly links to. 
+This forms a prototype chain.
+
+
+Key aspects of prototypes in JavaScript:
+Inheritance:
+Prototypes are the fundamental mechanism for inheritance in JavaScript. 
+When you try to access a property or method on an object, JavaScript first looks for it directly on that object. 
+If not found, it then looks up the prototype chain, checking the object's prototype, 
+then its prototype's prototype, and so on, until it finds the property or reaches the end of the chain (which is typically null).
+
+Sharing Properties and Methods:
+Prototypes allow you to define properties and methods once on a prototype object, 
+and then all objects that inherit from that prototype will automatically have access to those shared properties and methods without needing to duplicate them.
+This promotes code reusability and efficiency.
+
+prototype Property of Constructors:
+Functions in JavaScript (which can also act as constructors for creating objects) have a special prototype property. 
+This prototype property is the object that will serve as the prototype for all objects created using that constructor with the new keyword.
+__proto__ Property:
+While not recommended for direct manipulation in modern JavaScript, objects have an internal [[Prototype]] slot, often exposed as the __proto__ property, which points to their prototype object.
