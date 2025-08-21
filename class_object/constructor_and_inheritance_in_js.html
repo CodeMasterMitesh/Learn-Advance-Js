@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Constructor and Inheritance In Js</title>
+</head>
+<body>
+    <h1>Constructor and Inheritance In Js</h1>
+    <!-- Inheritance in JavaScript is a mechanism that allows objects or classes to acquire properties and methods from other objects or classes. This enables code reusability and the creation of hierarchical relationships between different entities in a program. -->
+<script>
+class Person{
+    name = null;
+    age = null;
+    mobile = null;
+
+    constructor(n,a,m)
+    {
+        console.log("This is Parent Class Contructor");
+        this.name = n;
+        this.age = a;
+        this.mobile = m;
+       console.log(`My name is ${this.name} and my age is ${this.age} and my mobile number is ${this.mobile}.`);
+    }
+    // method overriding
+    setData(name,age,mobile){
+        this.name = name;
+        this.age = age;
+        this.mobile = mobile;
+        console.log(this.name,this.age,this.mobile);
+    }
+};
+
+class Manager extends Person{
+    empid = null;
+    salary = null;
+    designation = null;
+    constructor(name,age,mobile)
+    {
+        super(name,age,mobile);
+        console.log("This is Manager Class Constructor");
+    }
+    setData(empid,salary,designation)
+    {
+        console.log("This is child class setData Function");
+        this.empid = empid;
+        this.salary = salary;
+        this.designation = designation;
+        console.log(empid,salary,designation);
+    }
+};
+
+// class Officer extends Person{
+//     empid = null;
+//     salary = null;
+//     designation = null;
+
+//     setData(empid,salary,designation)
+//     {
+//         console.log("This is child class setData Function");
+//         this.empid = empid;
+//         this.salary = salary;
+//         this.designation = designation;
+//         console.log(empid,salary,designation);
+//     }
+// };
+
+// let emp = new Person("Alpesh",33,1234567890);
+// console.log(emp);
+// // console.log(emp.setData("Mitesh",32,9033889873));
+
+// let emp1 = new Person("Mitesh",32,9033889873);
+// console.log(emp1);
+
+
+let m = new Manager("Sumit",25,987654321);
+console.log(m);
+console.log(m.setData("ABC101",35000,"SR.DEVELOPER"));
+
+// let o = new Officer("Kiran",22,654321987);
+// console.log(o);
+// console.log(o.setData("ABC005",15000,"JR.DEVELOPER"));
+
+</script>
+</body>
+</html>
