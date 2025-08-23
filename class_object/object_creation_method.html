@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Creation Methods</title>
+</head>
+<body>
+    <h1>Object Creation Methods</h1>
+
+<script>
+
+// method 1 
+// let obj = {
+//     name : "Mitesh",
+//     age :32,
+//     education : "B.com",
+// }
+
+// console.log(obj);
+// console.log(typeof(obj));
+
+// method 2 
+// let obj1 = new Object();
+
+// obj1.name = "Amit";
+// obj1.age = 25;
+// obj1.education = "B.tech";
+// obj1.printData = (name,age,education)=>{
+//     this.name = name;
+//     this.age = age;
+//     this.education = education;
+//     console.log(this.name,this.age,this.education);
+// }
+// // obj1.Prototyp.printData;
+// console.log(obj1);
+// console.log(obj1.printData("Sagar",25,"MBA"));
+// console.log(typeof(obj1));
+
+
+// method 3 
+
+// function student(name,age,education)
+// {
+//     this.name = name;
+//     this.age = age;
+//     this.education = education;
+
+//     this.printValue = function()
+//     {
+//         console.log("hello");
+//     }
+
+//     console.log(this.name,this.age,this.education);
+// }
+
+// let obj3 = new student("Kiran",22,"BBA");
+
+// console.log(obj3);
+// console.log(obj3.printValue());
+
+
+// method 4 
+// let student = {
+   
+//     msg(){
+//         console.log("Hello");
+//     }
+// }
+
+// let obj5 = Object.create(student);
+// // console.log(obj5);
+// // console.log(obj5.msg());
+// // console.log(obj5.name = "Savan");
+// // console.log(obj5.age = 28);
+// // console.log(obj5.education = "BCA");
+// obj5.name = "Savan";
+// obj5.age = 28;
+// obj5.education = "BCA";
+
+
+// // obj5.getData = ()=>{
+// //     console.log(obj5.name,obj5.age,obj5.education); // if you want to use arrow function than you want to access all property or metjod using object name
+// // }
+
+// obj5.getData = function(){
+//     console.log(this.name,this.age,this.education); // if you want to use this keyword for access property of object than using want to make function(){}
+// }
+
+// console.log(obj5.getData());
+
+// method 6 
+// function studentDetails(name,age,education)
+// { 
+//     return {name,age,education};
+// }
+// let data = studentDetails("Ajay",22,"BBA");
+// console.log(data);
+
+</script>
+</body>
+</html>
