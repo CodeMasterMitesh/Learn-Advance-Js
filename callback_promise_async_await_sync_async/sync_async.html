@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Synchronous JavaScript & Asynchronous JavaScript</title>
+</head>
+<body>
+
+<script>
+    // console.log("Print One");
+    // setTimeout(()=>{
+    //     console.log("hello");
+    // },4000);//2s
+    // console.log("Print Three");
+
+
+    // call back function 
+
+    // function calc(x,y){
+    //     console.log(x + y);
+    // }
+    // let calc = (a,b)=>{
+    //     console.log(a + b);
+    // }
+
+    // function sum(a, b, callback) {
+    //     callback(a, b); // pass arguments to the callback
+    // }
+
+    // console.log(sum(7,8,calc));
+
+
+    // setTimeout(()=>{
+    //     console.log("hello");
+    // },2000);
+
+    function getData(num,callback) {
+        setTimeout(() => {
+            console.log(num);
+            if (callback) {   // call callback if provided
+                callback();
+            }
+        }, 2000);
+    }
+
+    // this callback hell
+    getData(5,()=>{
+        getData(10,()=>{
+            getData(15,()=>{
+                console.log("Final Data Output");
+            });
+        });
+    });
+    
+
+    
+</script>
+</body>
+</html>
