@@ -6,7 +6,7 @@
     <title>Synchronous JavaScript & Asynchronous JavaScript</title>
 </head>
 <body>
-
+<h1>Synchronous JavaScript & Asynchronous JavaScript</h1>
 <script>
     // console.log("Print One");
     // setTimeout(()=>{
@@ -35,20 +35,27 @@
     //     console.log("hello");
     // },2000);
 
-    function getData(num,callback) {
+    function getData(num,cbFun) {
         setTimeout(() => {
             console.log(num);
-            if (callback) {   // call callback if provided
-                callback();
+            if (cbFun) {  
+                cbFun();
             }
-        }, 2000);
+        }, 3000);
     }
 
     // this callback hell
+    // let callBack = ()=>{
+    //     // getData(2);
+    //     console.log("I am Call Back Function");
+    // }
     getData(5,()=>{
-        getData(10,()=>{
-            getData(15,()=>{
-                getData(20);
+        console.log("wait 1....");
+        getData(6,()=>{
+            console.log("wait 2....");
+            getData(7,()=>{
+                console.log("wait 3....");
+                getData(8);
             });
         });
     });
