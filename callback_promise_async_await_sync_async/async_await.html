@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Synchronous JavaScript & Asynchronous JavaScript</title>
+</head>
+<body>
+<h1>Async Await In JavaScript</h1>
+<script>
+
+    function getData(num){
+        return new Promise((resolve,reject)=>{
+             setTimeout(() => {
+                console.log(num);
+                // reject("Error");
+                resolve("sucess");
+            }, 2000);
+        });
+    };
+
+    // IIFE -> 
+    // An IIFE, or Immediately Invoked Function Expression, is a JavaScript function that executes as soon as it is defined. It is a common pattern used to create a private scope for variables and functions, preventing them from polluting the global scope. 
+    
+    (async function(){
+        console.log("Wait for Data1.....");
+        await getData(5);
+        console.log("Wait for Data2.....");
+        await getData(6);
+        console.log("Wait for Data3.....");
+        await getData(7);
+        console.log("Wait for Data4.....");
+        await getData(8);
+    })();
+
+//    console.log("Waiting For Data 1.....");
+//    let promise = getData(1).then((res)=>{
+//         console.log(res);
+//         console.log("Waiting For Data 2.....");
+//         return getData(2);
+//     }).then((res)=>{
+//         console.log(res);
+//         console.log("Waiting For Data 3.....");
+//         return getData(3);
+//     }).then((res)=>{
+//          console.log(res);
+//     });
+
+
+    // getData(5,()=>{
+    //     console.log("wait 1....");
+    //     getData(6,()=>{
+    //         console.log("wait 2....");
+    //         getData(7,()=>{
+    //             console.log("wait 3....");
+    //             getData(8);
+    //         });
+    //     });
+    // });
+
+
+//    function getUserId(id){
+//         return new Promise((resolve,reject)=>{
+//                 setTimeout(()=>{
+//                 console.log(id);
+//                 resolve("Success");
+//             },2000);
+//         });
+//     };
+
+// async function getData(){
+//   console.log("Wait for Data1.....");
+//   await getUserId(5);
+//   console.log("Wait for Data2.....");
+//   await getUserId(6);
+//   console.log("Wait for Data3.....");
+//   await getUserId(7);
+//   console.log("Wait for Data4.....");
+//   await getUserId(8);
+// }
+
+
+//   let promise =  getData();
+</script>
+</body>
+</html>

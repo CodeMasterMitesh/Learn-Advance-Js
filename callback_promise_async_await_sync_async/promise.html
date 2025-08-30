@@ -31,25 +31,25 @@
     // console.log(promise);
 
 
-    function getValue(data){
-        return new Promise((res,rej)=>{
-                setTimeout(() => {
-                console.log("Data : ", data);
-                res("Success Data Receive");
-                // rej("Some Data Error");
-            }, 2000);
-        });
-    };
+    // function getValue(data){
+    //     return new Promise((res,rej)=>{
+    //             setTimeout(() => {
+    //             console.log("Data : ", data);
+    //             res("Success Data Receive");
+    //             // rej("Some Data Error");
+    //         }, 2000);
+    //     });
+    // };
 
-    function getValue1(data){
-        return new Promise((res,rej)=>{
-                setTimeout(() => {
-                console.log("Data : ", data);
-                res("Success Data Receive");
-                // rej("Some Data Error");
-            }, 2000);
-        });
-    };
+    // function getValue1(data){
+    //     return new Promise((res,rej)=>{
+    //             setTimeout(() => {
+    //             console.log("Data : ", data);
+    //             res("Success Data Receive");
+    //             // rej("Some Data Error");
+    //         }, 2000);
+    //     });
+    // };
 
 
     // let promise = getValue(10);
@@ -72,17 +72,17 @@
     // });
 
 
-    console.log("Wait For Data 1......");
+    // console.log("Wait For Data 1......");
 
-    getValue(10).then((res)=>{
-        console.log(res);
+    // getValue(10).then((res)=>{
+    //     console.log(res);
 
-        console.log("Wait For Data 2......");
+    //     console.log("Wait For Data 2......");
 
-        getValue1(20).then((res1)=>{
-             console.log(res1);
-        });
-    });
+    //     getValue1(20).then((res1)=>{
+    //          console.log(res1);
+    //     });
+    // });
 
     // promise1.then((res)=>{
     //     // console.log("Data Received");
@@ -95,14 +95,27 @@
 
 
 
-    // function getData(num,cbFun) {
-    //     setTimeout(() => {
-    //         console.log(num);
-    //         if (cbFun) {  
-    //             cbFun();
-    //         }
-    //     }, 3000);
-    // }
+    // function getData(num){
+    //     return new Promise((resolve,reject)=>{
+    //          setTimeout(() => {
+    //             console.log(num);
+    //             reject("Error");
+    //         }, 3000);
+    //     });
+    // };
+
+//    console.log("Waiting For Data 1.....");
+//    let promise = getData(1).then((res)=>{
+//         console.log(res);
+//         console.log("Waiting For Data 2.....");
+//         return getData(2);
+//     }).then((res)=>{
+//         console.log(res);
+//         console.log("Waiting For Data 3.....");
+//         return getData(3);
+//     }).then((res)=>{
+//          console.log(res);
+//     });
 
 
     // getData(5,()=>{
