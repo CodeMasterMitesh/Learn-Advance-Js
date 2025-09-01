@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch Method In JS</title>
+    <style>
+        #joke{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 2px solid black;
+            width: 500px;
+            height: 200px;
+            box-shadow: 3px 7px 13px 4px #4c4c33;
+            background-color: yellow;
+            color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;">Fetch Method In Js</h1>
+    
+    <div id="joke">
+        
+    </div>
+    <button id="btn">Get Jokes</button>
+<script>
+    let url = 'https://official-joke-api.appspot.com/random_joke';
+
+    // ajax xml
+    // json 
+    // json()
+    let jokeDiv = document.getElementById("joke");
+    async function getJokes()
+    {   
+        let promise = await fetch(url);
+        console.log(promise);
+        console.log(promise.status);
+        if(promise.status == 200){
+            let data = await promise.json();
+            console.log(data);
+            jokeDiv.innerHTML = `
+                <p><span>punchline</span> : ${data.punchline}</p>
+                <p>${data.setup}</p>
+            `;
+        }
+    }
+
+    let btn = document.getElementById("btn");
+    btn.addEventListener("click",(e)=>{
+        getJokes();
+    })
+    
+</script>    
+</body>
+</html>
