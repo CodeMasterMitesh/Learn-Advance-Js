@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Wether App</title>
+</head>
+<body>
+    <h1 style="text-align: center;">Simple Wether App</h1>
+    
+    <form id="submitForm">
+        <label for="">CityName :</label>
+        <br>
+        <input type="text" name="cityName" id="city" value="">
+        <br>
+        <input type="submit" value="getWether">
+    </form>
+    <div class="data"></div>
+<script>
+    let form = document.getElementById("submitForm");
+    form.addEventListener("submit",(evt)=>{
+        evt.preventDefault();
+        let cityName = document.getElementById("city").value;
+        let apiKey  = 'eb0540629f26a9b0b154c14aba5e7295';
+        // https://api.openweathermap.org/data/2.5/weather?q=Surat,IN&units=metric&appid=YOUR_API_KEY
+
+        let url = `https://api.openweathermap.org/data/2.5/weather?q=${cityName},IN&units=metric&appid=${apiKey}`;
+        let displayData = document.querySelector(".data");
+
+
+        async function getWetherDtaa()
+        {   
+            let response = await fetch(url);
+            // console.log(response);
+
+            if(response.status == 200){
+                let data = await response.json();
+                console.log(data);
+
+                displayData.innerHTML = `
+                   <p><span>Temp :</span> ${data.main.temp}</p>
+                   <p><span>Temp Min :</span> ${data.main.temp_min}</p>
+                   <p><span>Temp Max :</span> ${data.main.temp_max}</p>
+                   <p><span>Humidity :</span> ${data.main.humidity}</p>
+                   <p><span>Feels :</span> ${data.main.humidity}</p>
+                `;
+            }else{
+                displayData.innerHTML = "Some Error";
+            }
+            
+            
+        }
+        getWetherDtaa();
+    });
+
+
+    
+
+    // let btn = document.getElementById("btn");
+    // btn.addEventListener("click",(e)=>{
+    //     getJokes();
+    // })
+    
+</script>    
+</body>
+</html>
